@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed | Bud n' Budder — Astoria, NY</title>
+<meta name="description" content="Your order at Bud n' Budder has been placed successfully.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/partials/header.css">
+<link rel="stylesheet" href="assets/css/partials/footer.css">
+<link rel="stylesheet" href="assets/css/success.css">
+</head>
+<body>
+
+<div id="siteHeaderInclude"></div>
+
+<main>
+
+  <!-- ============================= -->
+  <!-- SUCCESS -->
+  <!-- ============================= -->
+  <section class="success-section">
+    <div class="container success-layout">
+        <!-- CHECKING (default) -->
+        <div data-state="checking">
+          <div class="success-card__icon success-card__icon--pending">
+            <span class="success-card__spinner"></span>
+          </div>
+          <h1 class="success-card__title">Confirming your payment…</h1>
+          <p class="success-card__sub">We're checking your order status. You can safely leave this page and return to My Orders later.</p>
+        </div>
+
+        <!-- SUCCESS -->
+        <div data-state="success" hidden>
+          <div class="success-card__icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h1 class="success-card__title">Order Placed Successfully!</h1>
+          <p class="success-card__sub">Thanks for shopping with us. We have received your order and we are getting it ready. You will be notified as it moves along.</p>
+          <a href="order.html" class="btn btn--primary success-card__btn">View My Orders</a>
+        </div>
+
+        <!-- STILL CONFIRMING -->
+        <div data-state="pending" hidden>
+          <div class="success-card__icon success-card__icon--pending">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h1 class="success-card__title">Still confirming your payment</h1>
+          <p class="success-card__sub">Your bank is taking a little longer than usual. Check My Orders in a few minutes to see the final status.</p>
+          <a href="order.html" class="btn btn--primary success-card__btn">View My Orders</a>
+        </div>
+
+        <!-- NO ORDER FOUND -->
+        <div data-state="unknown" hidden>
+          <div class="success-card__icon success-card__icon--pending">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.2"/><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <h1 class="success-card__title">No recent order found</h1>
+          <p class="success-card__sub">We couldn't find an order from this session. If you just paid, check My Orders.</p>
+          <a href="order.html" class="btn btn--primary success-card__btn">View My Orders</a>
+        </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterInclude"></div>
+
+<script src="assets/js/include.js"></script>
+<script src="assets/js/partials/header.js"></script>
+<script src="assets/js/partials/footer.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/success.js"></script>
+</body>
+</html>

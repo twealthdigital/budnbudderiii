@@ -1,0 +1,90 @@
+/* =====================================================
+   BUD N' BUDDER — payment.css
+   Payment page only. Loaded after checkout.css, whose
+   .checkout-card / .order-summary / .checkout-summary*
+   classes this page reuses.
+   ===================================================== */
+
+.checkout-payment-card { margin-bottom: 22px; }
+
+#payment-element { margin-top: 6px; }
+
+.payment-error {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--badge-hot);
+}
+.payment-error[hidden] { display: none; }
+
+.payment-pay-btn { margin-top: 24px; }
+.payment-pay-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.payment-pay-btn.is-loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+.payment-pay-btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(12,12,14,0.25);
+  border-top-color: var(--color-black);
+  animation: checkout-spin 0.6s linear infinite;
+}
+
+@media (max-width: 700px) {
+  .payment-pay-btn { margin-top: 20px; }
+}
+
+.payment-method-note { margin: 12px 0 18px; opacity: .75; line-height: 1.5; }
+#venmo-button { width: 100%; min-height: 48px; }
+.zelle-payment-box { padding: 20px; border: 1px solid rgba(0,0,0,.08); border-radius: 14px; margin-bottom: 16px; }
+.zelle-payment-box h3 { margin-top: 0; }
+.zelle-payment-box strong { display:block; font-size: 1.05rem; margin: 8px 0 14px; }
+
+
+/* ---------- ZELLE VERIFICATION UX ---------- */
+.zelle-payment-box {
+  padding: 22px;
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 16px;
+  margin-bottom: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,249,245,.98));
+}
+.zelle-payment-box__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(180,120,20,.10);
+  color: #76520d;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.zelle-payment-box h3 { margin: 0 0 8px; }
+.zelle-payment-box__lead { margin: 0 0 18px; line-height: 1.55; color: var(--color-text-soft); }
+.zelle-payment-detail { padding: 13px 0; border-top: 1px solid rgba(0,0,0,.07); }
+.zelle-payment-detail__label { display:block; margin-bottom: 5px; font-size:.72rem; font-weight:800; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:.04em; }
+.zelle-payment-detail strong { display:block; font-size:1.08rem; margin:0; word-break:break-word; }
+.zelle-payment-detail p { margin:0; line-height:1.5; }
+.zelle-payment-warning { margin-top: 14px; padding: 13px 14px; border-radius: 12px; background: rgba(180,120,20,.09); color: #63470f; font-size: .82rem; line-height: 1.5; }
+.zelle-claim-success { display:flex; gap:12px; align-items:flex-start; margin-top:14px; padding:15px 16px; border-radius:14px; border:1px solid rgba(34,110,70,.20); background:rgba(34,110,70,.07); color:#235c40; }
+.zelle-claim-success[hidden] { display:none; }
+.zelle-claim-success__icon { width:28px; height:28px; flex:0 0 28px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#235c40; color:#fff; font-weight:800; }
+.zelle-claim-success strong { display:block; margin-bottom:4px; }
+.zelle-claim-success p { margin:0; line-height:1.5; font-size:.82rem; }
+
+
+/* Clear amount, recipient and memo controls for manual Zelle transfers */
+.zelle-copy-row { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.zelle-copy-row > div { min-width:0; }
+.zelle-copy-btn { flex:0 0 auto; border:1px solid rgba(11,70,95,.22); border-radius:9px; background:#fff; color:#164e63; padding:9px 12px; font:inherit; font-size:.78rem; font-weight:800; cursor:pointer; }
+.zelle-copy-btn:hover { background:#f0f8fa; }
+.zelle-copy-btn:focus-visible { outline:2px solid #2563eb; outline-offset:2px; }
+.zelle-payment-tip { margin:12px 0 0; color:var(--color-text-soft); font-size:.84rem; line-height:1.5; }
+@media (max-width:480px) { .zelle-copy-row { align-items:flex-start; } .zelle-copy-btn { padding:8px 9px; } }

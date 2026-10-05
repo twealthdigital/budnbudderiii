@@ -1,0 +1,4 @@
+/* Customer-facing Zelle verification notice */
+.order-card__payment-notice{margin:14px 0;padding:14px 16px;border:1px solid #f3d49b;border-radius:10px;background:#fff8e8;color:#62430b}
+.order-card__payment-notice p{margin:6px 0 0;line-height:1.5}
+.order-card__payment-notice--paid{border-color:#a7dfbd;background:#effbf3;color:#14532d}
